@@ -24,5 +24,3 @@ return [
     */
     'ticket_repository' => 'total_tickets.txt',
 ];
-
-?>

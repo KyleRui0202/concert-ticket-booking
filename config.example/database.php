@@ -23,6 +23,7 @@ return [
         'sqlite' => [
             'driver' => 'sqlite',
             'database' => 'database.sqlite',
+            'prefix' => '',
         ],
 
         'mysql' => [
@@ -31,5 +32,3 @@ return [
     ],
 
 ];
-
-?>
