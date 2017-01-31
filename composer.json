@@ -27,7 +27,7 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "cp -r config.example config"
+            "cp -r config.example/ config/"
         ]
     },
     "config": {
