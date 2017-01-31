@@ -33,20 +33,20 @@ All of the configuration files for the system are stored in the `config` directo
 **Notice:** It should be implicitly done by `composer create-project` to copy the `config.example` directory to `config` directory for you. If it still does not exist, you may need to do that manually.
 
 ### Ticket Repository
-Only the ticket quantity are considered for the ticket booking system at this moment. So you probably need to create a new file within the ``datastore` directory to store the total tickets and modify `ticket_repository` to the new file name within `config/app.php`
+Only the ticket quantity are considered for the ticket booking system at this moment. So you probably need to create a new file within the `datastore` directory to store the total tickets and modify `ticket_repository` to the new file name within `config/app.php`
 
 ### Database
-For simplicity, [SQLite](https://sqlite.org), *an embedded and file-based database*, is used here to store sold ticket records as well as the temporary booking sessions. You may need to configure it in the 'config/database.php' file and create the database(file) within the `datastore` directory.
+For simplicity, [SQLite](https://sqlite.org), *an embedded and file-based database*, is used here to store sold ticket records as well as the temporary booking sessions. You may need to configure it in the `config/database.php` file and create the database(file) within the `datastore` directory.
 
 The database schema can be checked out in the `datastore/setup.php`. Plesse run it to build the schema:
 ```
 php datastore/setup.php
 ``` 
 
-Altough SQLite is used here, other RDBMS (e.g., MySQL, Postgres, etc.) may be used by adding their configuration in 'config/database.php', create the corresponding 'utils/setup_database_connection.php'. (Notice: some additional queries in the code may be modified if necessary according to their own syntax)
+Altough SQLite is used here, other RDBMS (e.g., MySQL, Postgres, etc.) may be used instead by adding their configuration into `config/database.php` and connection setup code into `utils/setup_database_connection.php`. (Notice: some other queries in the code may need to be modified according to their own spceific SQL syntax.)
 
 ## Web Server Configuration
-Semantic URL is used here, so you may need to modify your web server configuration if necessady. 
+Semantic URLs is used here, so you may need to modify your web server configuration if necessady. 
 
 ### Nginx
 If you are using Nginx, the following directive in your site configuration will direct all requests to the `index.php` front controller:
@@ -57,4 +57,4 @@ location / {
 ```
 
 ## Others
-Due to the limited development time, Concurrency Control has not been carefully considered yet but may need more concerns for the future development.
+Due to the limited development time, Concurrency Control has not been carefully considered yet but may need more attention for the future development.
