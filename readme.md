@@ -29,6 +29,9 @@ You should configure your web server's document/web root to be the `public` dire
 ### Configuration Files
 All of the configuration files for the system are stored in the `config` directory. Each option is documented, so feel free to look through the files and modify them if necessary.
 
+### Ticket Repository
+Only the ticket quantity are considered for the ticket booking system at this moment. So you probably need to create a new file within the ``datastore` directory to store the total tickets and modify `ticket_repository` to the new file name within `config/app.php`
+
 ### Database Configuration
 [SQlite](https://sqlite.org) is used here to store sold ticket records as well as the temporary booking sessions. You may need to configure it in the 'config/database.php' file and create the database(file) within the `datastore` directory.
 
