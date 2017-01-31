@@ -3,7 +3,6 @@
 $db_conn = require __DIR__.'/../utils/setup_database_connection.php';
 
 try {
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $conn->exec("CREATE TABLE IF NOT EXISTS sold_tickets(
         first_name VARCHAR(50) NOT NULL,
         last_name VARCHAR(50) NOT NULL,
