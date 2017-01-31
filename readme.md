@@ -9,6 +9,7 @@ This is a simple concert ticket booking system, and you can follow the following
 
 ## Server Requirements
 The ticket booking system has a few system requirements for your server as follows:
+
 * PHP >= 5.5.9
 * PDO PHP Extension and PDO_SQLITE Driver
 
