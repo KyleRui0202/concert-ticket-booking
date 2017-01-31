@@ -30,6 +30,8 @@ You should configure your web server's document/web root to be the `public` dire
 ### Configuration Files
 All of the configuration files for the system are stored in the `config` directory. Each option is documented, so feel free to look through the files and modify them if necessary.
 
+**Notice:** It should be implicitly done by `composer create-project` to copy the `config.example` directory to `config` directory for you. If it still does not exist, you may need to do that manually.
+
 ### Ticket Repository
 Only the ticket quantity are considered for the ticket booking system at this moment. So you probably need to create a new file within the ``datastore` directory to store the total tickets and modify `ticket_repository` to the new file name within `config/app.php`
 
