@@ -1,5 +1,10 @@
 <?php
 
+if (!config('database')) {
+    config()->setBasePath(realpath(__DIR__.'/..'));
+    config()->load('database');
+}
+
 try {
     $connection = config('database.default');
     $username = '';
