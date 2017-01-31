@@ -1,0 +1,36 @@
+{
+    "name": "Kyle0202/ticket-booking-system",
+    "description": "Simple Ticket Booking System.",
+    "keywords": ["web", "application", "booking"],
+    "license": "MIT",
+    "type": "project",
+    "authors" : [
+        {
+            "name": "Rui Yang",
+            "email": "ruiyang0202@gmail.com",
+            "homepage": "http://ruiyang.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "classmap": [ "src/" ],
+        "files": ["src/helpers.php"]
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('config.example', 'config');\""
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}
