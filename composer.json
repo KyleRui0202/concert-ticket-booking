@@ -27,7 +27,7 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "php -r \"copy('config.example', 'config');\""
+            "cp -r config.example config"
         ]
     },
     "config": {
