@@ -7,7 +7,7 @@
  */
 
 return function(PDO $db_conn) { 
-    $totalTicekts = require __DIR__.'/check_total_tickets.php';
+    $totalTickets = require __DIR__.'/check_total_tickets.php';
 
     try {
         $soldTickets = (int) $db_conn->query('SELECT SUM(quantity) FROM sold_tickets')->fetchColumn();
