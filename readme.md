@@ -19,7 +19,7 @@ The ticket booking system has a few system requirements for your server as follo
 Run the below command to build the autoloader and setup the `config` directory for configuration. 
 
 ```
-composer install
+composer create-project
 ```
 
 ### Configuration
