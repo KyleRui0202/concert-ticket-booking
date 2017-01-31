@@ -37,7 +37,7 @@ class Request {
      *
      * @var array
      */
-    protected $cookie;
+    protected $cookies;
 
     /**
      * Constructor.
@@ -47,7 +47,6 @@ class Request {
      * @param array $request
      * @param array $files
      * @param array $cookies
-     * @param string|resource $content
      */
     public function __construct($server = [], $query = [], $request = [], $files = [], $cookies = []) {
         $this->server = $server;

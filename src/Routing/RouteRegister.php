@@ -63,8 +63,7 @@ class RouteRegister {
      * @param mixed $action
      * @return $this
      */
-    public function get($uri, $action)
-    {
+    public function get($uri, $action) {
         $this->matchRoute('GET', $uri, $action);
 
         return $this;
@@ -77,8 +76,7 @@ class RouteRegister {
      * @param mixed $action
      * @return $this
      */
-    public function post($uri, $action)
-    {
+    public function post($uri, $action) {
         $this->matchRoute('POST', $uri, $action);
 
         return $this;
@@ -91,8 +89,7 @@ class RouteRegister {
      * @param mixed $action
      * @return $this
      */
-    public function put($uri, $action)
-    {
+    public function put($uri, $action) {
         $this->matchRoute('PUT', $uri, $action);
 
         return $this;
@@ -119,8 +116,7 @@ class RouteRegister {
      * @param mixed $action
      * @return $this
      */
-    public function delete($uri, $action)
-    {
+    public function delete($uri, $action) {
         $this->matchRoute('DELETE', $uri, $action);
 
         return $this;
@@ -134,8 +130,7 @@ class RouteRegister {
      * @param  mixed  $action
      * @return void
      */
-    public function matchRoute($method, $uri, $action)
-    {
+    public function matchRoute($method, $uri, $action) {
         $action = $this->parseAction($action);
 
         $uri = '/'.trim($uri, '/');
@@ -159,8 +154,7 @@ class RouteRegister {
      * @param  mixed  $action
      * @return array
      */
-    protected function parseAction($action)
-    {
+    protected function parseAction($action) {
         if (is_string($action)) {
             return ['uses' => $action];
         } elseif (! is_array($action)) {
@@ -203,7 +197,7 @@ class RouteRegister {
     }
     
     /**
-     * Handle dynamic stati calls to the object.
+     * Handle dynamic static calls to the object.
      *
      * @param string $method
      * @param array $args
