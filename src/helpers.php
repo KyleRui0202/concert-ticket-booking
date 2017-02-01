@@ -98,7 +98,7 @@ if (! function_exists('array_set')) {
 
 if (! function_exists('base_path')) {
     /**
-     * Get the path to the system base.
+     * Get the absolute path from relative application path.
      *
      * @param  string  $path
      * @return string
@@ -112,7 +112,7 @@ if (! function_exists('base_path')) {
 
 if (! function_exists('datastore_path')) {
     /**
-     * Get the datastore path.
+     * Get the absolute path from relative "datastore" path .
      *
      * @param  string  $path
      * @return string
@@ -126,7 +126,7 @@ if (! function_exists('datastore_path')) {
 
 if (! function_exists('public_path')) {
     /**
-     * Get the path to "public" directory.
+     * Get the absolute path from relative "public" path.
      *
      * @param  string  $path
      * @return string
@@ -139,7 +139,7 @@ if (! function_exists('public_path')) {
 
 if (! function_exists('resource_path')) {
     /**
-     * Get the path to "resources" directory.
+     * Get the absolute path from relative "resources" path.
      *
      * @param  string  $path
      * @return string
@@ -152,7 +152,7 @@ if (! function_exists('resource_path')) {
 
 if (! function_exists('view_path')) {
     /**
-     * Get the path to "views" directory.
+     * Get the absolute path from relative "views" path.
      *
      * @param  string  $path
      * @return string
@@ -165,12 +165,12 @@ if (! function_exists('view_path')) {
 
 if (! function_exists('config')) {
     /**
-     * Get/set the specified configuration value.
+     * Get/set the specified configuration value(s).
      *
-     * If an array is passed as the key, we will assume you want to set an array of values.
+     * If an array is passed as the key, it will set an array of configuration values.
      *
-     * @param  array|string  $key
-     * @param  mixed  $default
+     * @param array|string|null $key
+     * @param mixed  $default
      * @return mixed
      */
     function config($key = null, $default = null) {
@@ -190,7 +190,8 @@ if (! function_exists('route_register')) {
     /**
      * Resolve/register the specified route(s).
      *
-     * If an array is passed as the key, we will assume you want to set an array of values.
+     * If an action is given, it will register the specified method(s) and
+     * URI with the action. Otherwise, it will try to resolve them.
      *
      * @param  array|null $methodAndUri
      * @param  mixed  $action
@@ -220,6 +221,8 @@ if (! function_exists('session')) {
     /**
      * Get/set/delete the specified session value(s).
      *
+     * Only the item at the top level can be deleted by
+     * setting its value to null through this function 
      *
      * @param  array|string  $key
      * @param  mixed  $default
@@ -256,7 +259,7 @@ if (! function_exists('url')) {
      * @param bool|null $secure
      * @return string
      */
-    function url($path = null, $parameters = [], $secure = null) {
+    function url($path, $parameters = [], $secure = null) {
         // Check if the path itself is a valid URL
         if (filter_var($path, FILTER_VALIDATE_URL, ['flags' => [
             FILTER_FLAG_SCHEME_REQUIRED, FILTER_FLAG_HOST_REQUIRED]]) !== false) {
